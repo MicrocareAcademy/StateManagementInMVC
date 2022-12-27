@@ -1,0 +1,31 @@
+﻿@model string
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+<div class="container" style="margin-top:100px;">
+
+
+@if (string.IsNullOrWhiteSpace(Model) == false)
+{
+   <div>Welcome back, @Model</div>
+   @*@Html.ActionLink("Forget Me", "RemoveCookie")*@
+   <a href="@Url.Action("ForgetCookie","Cookie")">Forget Me</a>
+}
+else
+{
+   
+   <form asp-action="Index" asp-controller="Cookie" method="post">
+
+       <span>Hey, seems like it's your first time here!</span><br />
+       <label>Please provide your name:</label>
+
+       <input type="text" id="UserName" name="UserName" />
+
+       <div class="form-group">
+           <input type="submit" value="Update" class="btn btn-primary" />
+       </div>
+
+   </form>
+}
+
+</div>
