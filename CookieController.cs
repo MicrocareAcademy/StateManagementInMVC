@@ -30,7 +30,7 @@ namespace StateManagement
             option.Expires = DateTime.Now.AddMinutes(1);
 
             //Current time = 27-12-2022 07:10 AM
-            // Expires time = 27-12-2022 07:20 AM
+            // Expires time = 27-12-2022 07:11 AM
 
             //browser will store cookie and will expires automatically after one min
             Response.Cookies.Append("UserCookie",userName,option);

@@ -3,6 +3,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
+builder.Services.AddSession(); //enable Session State
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -16,6 +18,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+app.UseSession(); // we should invoke the UseSession() before invoking UseMVC().
+
 app.UseRouting();
 
 app.UseAuthorization();
@@ -24,7 +28,7 @@ app.MapRazorPages();
 
 app.MapControllerRoute(
    name: "default",
-   pattern: "{controller=Cookie}/{action=Index}/{id?}"
+   pattern: "{controller=Home}/{action=Index}/{id?}"
 );
 
 

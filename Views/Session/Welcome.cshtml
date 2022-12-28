@@ -1,0 +1,13 @@
+﻿@model string
+
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+
+<div class="container" style="margin-top:100px;">
+    <div>Welcome back, @Model</div>
+
+     <a href="@Url.Action("Logout","Session")">Logout</a>
+
+</div>
